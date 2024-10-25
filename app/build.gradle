@@ -4,7 +4,7 @@ plugins {
 
 android {
     compileSdk 32
-
+    namespace = "com.example.lab8"
     defaultConfig {
         applicationId "com.example.lab8"
         minSdk 21
