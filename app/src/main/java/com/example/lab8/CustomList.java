@@ -36,14 +36,17 @@ public class CustomList extends ArrayAdapter<City> {
      */
     @Override
     public int getCount() {
-        return cities.size();}
+        return this.cities.size();}
 
     /**
      * Adds a new city to CustomList
      * @param city the city to add
      */
     public void addCity(City city) {
-        if (!cities.contains(city)) cities.add(city);}
+        if (!cities.contains(city)) {
+            this.cities.add(city);
+        }
+    }
 
     /**
      * Finds if a city exists in our CustomList
