@@ -71,4 +71,13 @@ public class CustomList extends ArrayAdapter<City> {
             return;
         } throw new Exception("City does not exist: " + city.getCityName());
     }
+
+    /**
+     * Gets the number of cities in our CustomList using getCount()
+     * @return number of cities in CustomList object
+     */
+    @Override
+    public int countCity() {
+        return this.getCount();
+    }
 }
