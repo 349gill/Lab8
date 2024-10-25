@@ -60,4 +60,15 @@ public class CustomList extends ArrayAdapter<City> {
         return cities.contains(city);
     }
 
+    /**
+     * Deletes city from the CustomList
+     * @param city the city to delete
+     * @throws Exception if city is not in the CustomList
+     */
+    public void deleteCity(City city) throws Exception {
+        if (cities.contains(city)) {
+            cities.remove(city);
+            return;
+        } throw new Exception("City does not exist: " + city.getCityName());
+    }
 }
