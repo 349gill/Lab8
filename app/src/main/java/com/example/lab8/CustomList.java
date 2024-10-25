@@ -11,32 +11,23 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class CustomList extends ArrayAdapter<City> {
-
     private ArrayList<City> cities;
     private Context context;
     public CustomList(Context context, ArrayList<City> cities) {
         super(context, 0, cities);
         this.cities = cities;
-        this.context = context;
-    }
+        this.context = context;}
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view = convertView;
-
-        if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
-        }
-
+        if (view == null) view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
         City city = cities.get(position);
-
         TextView cityName = view.findViewById(R.id.city_text);
         TextView provinceName = view.findViewById(R.id.province_text);
-
         cityName.setText(city.getCityName());
         provinceName.setText(city.getProvinceName());
-
         return view;
     }
 
@@ -46,18 +37,14 @@ public class CustomList extends ArrayAdapter<City> {
      */
     @Override
     public int getCount() {
-        return cities.size();
-    }
+        return cities.size();}
 
     /**
      * Adds a city object to the list if it does not already exist
      * @param city the city to add
      */
     public void addCity(City city) {
-        if (!cities.contains(city)) {
-            cities.add(city);
-        }
-    }
+        if (!cities.contains(city)) cities.add(city);}
 
     /**
      * Find a given city from CustomList
@@ -65,8 +52,7 @@ public class CustomList extends ArrayAdapter<City> {
      * @return True if city is present, false if it's not found
      */
     public boolean hasCity(City city) {
-        return cities.contains(city);
-    }
+        return cities.contains(city);}
 
     /**
      * Deletes a city from the Customlist
@@ -75,14 +61,11 @@ public class CustomList extends ArrayAdapter<City> {
      */
     public void deleteCity(City city) throws Exception {
         if (cities.contains(city)) cities.remove(city);
-        else throw new Exception("City not in list: " + city.getCityName());
-    }
+        else throw new Exception("City not in list: " + city.getCityName());}
 
     /**
      * Finds the total number of cities in the CustomList object
      * @return Size of the Arraylist in CustomList object
      */
     public int countCity() {
-        return getCount();
-    }
-}
+        return getCount();}}

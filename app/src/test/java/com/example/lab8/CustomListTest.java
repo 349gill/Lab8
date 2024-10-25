@@ -17,8 +17,7 @@ public class CustomListTest {
      */
     public CustomList MockCityList() {
         list = new CustomList(null, new ArrayList<>());
-        return list;
-    }
+        return list;}
 
     /**
      * Test for addCity method: Adds a city to the list and checks if the list size increases by one
@@ -28,8 +27,7 @@ public class CustomListTest {
         list = MockCityList();
         int listSize = list.getCount();
         list.addCity(new City("Edmonton", "AB"));
-        assertEquals(list.getCount(), listSize + 1);
-    }
+        assertEquals(list.getCount(), listSize + 1);}
 
     /**
      * Test for deleteCity method:
@@ -45,8 +43,7 @@ public class CustomListTest {
         list.deleteCity(city);
         assertEquals(list.getCount(), listSize - 1);
         Exception exception = assertThrows(Exception.class, () -> list.deleteCity(city));
-        assertEquals("City not in list: " + city.getCityName(), exception.getMessage());
-    }
+        assertEquals("City not in list: " + city.getCityName(), exception.getMessage());}
 
     /**
      * Test for hasCity method:
@@ -59,8 +56,7 @@ public class CustomListTest {
         City city = new City("Edmonton", "AB");
         assertFalse(list.hasCity(city));
         list.addCity(city);
-        assertTrue(list.hasCity(city));
-    }
+        assertTrue(list.hasCity(city));}
 
     /**
      * Test for countCity method: Checks if countCity returns the correct number of cities.
@@ -70,6 +66,4 @@ public class CustomListTest {
         list = MockCityList();
         assertEquals(0, list.countCity());
         list.addCity(new City("Edmonton", "AB"));
-        assertEquals(1, list.countCity());
-    }
-}
+        assertEquals(1, list.countCity());}}
